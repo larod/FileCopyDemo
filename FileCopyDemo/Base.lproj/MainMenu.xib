@@ -757,27 +757,10 @@
                             </connections>
                         </button>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="6B34B75B-BA61-42C3-AD39-53DC98E844D3" label="Test" paletteLabel="Test" id="D6W-rK-CIM">
-                        <nil key="toolTip"/>
-                        <size key="minSize" width="78" height="32"/>
-                        <size key="maxSize" width="82" height="43"/>
-                        <button key="view" verticalHuggingPriority="750" id="6bB-Z6-CVj">
-                            <rect key="frame" x="0.0" y="14" width="78" height="43"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Nvz-FE-EdC">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="test:" target="Voe-Tx-rLC" id="wiA-oy-9hI"/>
-                            </connections>
-                        </button>
-                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="pAd-bf-9QU"/>
                     <toolbarItem reference="KOj-qn-Sqo"/>
-                    <toolbarItem reference="D6W-rK-CIM"/>
                     <toolbarItem reference="rzX-rB-U0y"/>
                     <toolbarItem reference="ovT-Iy-zLB"/>
                 </defaultToolbarItems>

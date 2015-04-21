@@ -1,3 +1,19 @@
+/*
+ Copyright 2015 Luis A. Rodríguez-Rivera
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+ http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
 #import "AppDelegate.h"
 #import "QueueWindowController.h"
 
@@ -47,16 +63,4 @@
 -(QueueWindowController *)getQueueController {
     return _queueWindowController;
 }
--(IBAction)test:(id)sender {
-    NSArray *sampleFiles = [NSArray arrayWithObjects:[NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/MoneyTalks-MarinaAngel-BangingMarina.mp4"], [NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/asians.avi"], [NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/TEEN PIES - Marissa Mae Overflowing With Cum 03.23.2015 - NEW MARCH 23rd, 2015 SD MP4.mp4"], [NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/Blacked - Cassidy Klein - My Girlfriends Hot Sister Loves BBC  NEW (April 16, 2015) NEW.mp4"], nil];
-    
-    if (!_queueWindowController) {
-        _queueWindowController = [[QueueWindowController alloc]initWithWindowNibName:@"Queue"];
-    }
-    [_queueWindowController showWindow:self];
-    for (NSURL *url in sampleFiles) {
-        [_queueWindowController addFileCopyOperationWithSource:url andDestination:[NSURL fileURLWithPath:_destinationLabel.stringValue]];
-    }
-}
-
 @end
