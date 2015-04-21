@@ -47,16 +47,5 @@
 -(QueueWindowController *)getQueueController {
     return _queueWindowController;
 }
--(IBAction)test:(id)sender {
-    NSArray *sampleFiles = [NSArray arrayWithObjects:[NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/MoneyTalks-MarinaAngel-BangingMarina.mp4"], [NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/asians.avi"], [NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/TEEN PIES - Marissa Mae Overflowing With Cum 03.23.2015 - NEW MARCH 23rd, 2015 SD MP4.mp4"], [NSURL fileURLWithPath:@"/Users/LAROD/Downloads/Temp/Blacked - Cassidy Klein - My Girlfriends Hot Sister Loves BBC  NEW (April 16, 2015) NEW.mp4"], nil];
-    
-    if (!_queueWindowController) {
-        _queueWindowController = [[QueueWindowController alloc]initWithWindowNibName:@"Queue"];
-    }
-    [_queueWindowController showWindow:self];
-    for (NSURL *url in sampleFiles) {
-        [_queueWindowController addFileCopyOperationWithSource:url andDestination:[NSURL fileURLWithPath:_destinationLabel.stringValue]];
-    }
-}
 
 @end
