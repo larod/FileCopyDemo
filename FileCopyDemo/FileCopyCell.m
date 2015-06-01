@@ -36,8 +36,8 @@
     NSButton *button = (NSButton*)sender;
     FileCopyOperation *opr = [(NSTableCellView*)[button superview]objectValue];
     [opr cancel];
-    AppDelegate *appDelegate = (AppDelegate*)[[NSApplication sharedApplication]delegate];
-    [appDelegate.queueWindowController.fileCopyOperations performSelectorOnMainThread:@selector(removeObject:) withObject:opr waitUntilDone:YES];
+//    AppDelegate *appDelegate = (AppDelegate*)[[NSApplication sharedApplication]delegate];
+//    [appDelegate.queueWindowController.fileCopyOperations performSelectorOnMainThread:@selector(removeObject:) withObject:opr waitUntilDone:YES];
 }
 
 @end

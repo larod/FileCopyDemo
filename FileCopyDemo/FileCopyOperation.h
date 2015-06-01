@@ -47,7 +47,8 @@ typedef NS_ENUM(int8_t, FILE_COPY_STATE) {
 @property (weak) id<FileCopyOperationDelegate> delegate;
 @property (readonly) int fCopyExitCode;
 
-- (instancetype)initWithSource:(NSURL*)src andDestination:(NSURL*)dst;
+//- (instancetype)initWithSource:(NSURL*)src andDestination:(NSURL*)dst;
+- (instancetype)initWithSource:(NSURL *)src andDestination:(NSURL *)dst andDelegate:(id <FileCopyOperationDelegate>)delegate;
 
 @end
 

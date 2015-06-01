@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="FileCopyViewController">
+            <connections>
+                <outlet property="tableView" destination="dsd-J4-SVr" id="RQL-qb-beh"/>
+                <outlet property="window" destination="uiF-Bq-EwG" id="BZh-ha-yyP"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="File Copy Operations" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="fileCopyWindow" animationBehavior="default" id="uiF-Bq-EwG" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <rect key="contentRect" x="139" y="81" width="348" height="207"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <value key="minSize" type="size" width="348" height="207"/>
+            <view key="contentView" id="aOz-nz-V0z">
+                <rect key="frame" x="0.0" y="0.0" width="348" height="207"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="60" horizontalPageScroll="10" verticalLineScroll="60" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-OJ-fne">
+                        <rect key="frame" x="-1" y="26" width="350" height="182"/>
+                        <clipView key="contentView" id="x7w-yc-d0X">
+                            <rect key="frame" x="1" y="17" width="238" height="117"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="58" rowSizeStyle="automatic" viewBased="YES" id="dsd-J4-SVr">
+                                    <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <size key="intercellSpacing" width="3" height="2"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableColumns>
+                                        <tableColumn width="345" minWidth="40" maxWidth="1000" id="MNC-FZ-jM3">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="Ha9-JE-lEt">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                            <prototypeCellViews>
+                                                <tableCellView identifier="FileOperationCell" id="bAA-wN-e42" userLabel="FileOperationCell" customClass="FileCopyCell">
+                                                    <rect key="frame" x="1" y="1" width="345" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xq-w4-5hp" userLabel="source">
+                                                            <rect key="frame" x="61" y="38" width="264" height="17"/>
+                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Copying &quot;filename&quot;" placeholderString="Copying &quot;filename&quot;" id="OfV-NF-BDI">
+                                                                <font key="font" metaFont="system"/>
+                                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hkh-6b-nUT">
+                                                            <rect key="frame" x="3" y="3" width="52" height="52"/>
+                                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="YXO-Ip-6L3"/>
+                                                        </imageView>
+                                                        <progressIndicator fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="EnV-FC-dAl">
+                                                            <rect key="frame" x="63" y="19" width="251" height="20"/>
+                                                        </progressIndicator>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Zf-bF-2IB" userLabel="status">
+                                                            <rect key="frame" x="61" y="8" width="55" height="14"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" placeholderString="102.2 MB" id="43q-L6-dMp">
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FIZ-BC-y8g" userLabel="totalBytes">
+                                                            <rect key="frame" x="117" y="8" width="98" height="14"/>
+                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" placeholderString="of 143.2 MB" id="hDY-B7-Gi8">
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                        <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7SE-WT-7xF" userLabel="cancel">
+                                                            <rect key="frame" x="322" y="19" width="20" height="20"/>
+                                                            <buttonCell key="cell" type="bevel" bezelStyle="circular" image="NSStopProgressFreestandingTemplate" imagePosition="overlaps" alignment="left" imageScaling="proportionallyDown" id="Sdf-Yn-uah">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="label"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="cancelOpr:" target="bAA-wN-e42" id="OPf-3W-Otd"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="fileName" destination="0xq-w4-5hp" id="VRZ-wT-AJh"/>
+                                                        <outlet property="icon" destination="Hkh-6b-nUT" id="R00-AR-AKK"/>
+                                                        <outlet property="progressBar" destination="EnV-FC-dAl" id="8BU-q7-XpG"/>
+                                                        <outlet property="status" destination="7Zf-bF-2IB" id="W9j-Sw-m2y"/>
+                                                        <outlet property="totalBytes" destination="FIZ-BC-y8g" id="nKl-VJ-BxK"/>
+                                                    </connections>
+                                                </tableCellView>
+                                            </prototypeCellViews>
+                                        </tableColumn>
+                                    </tableColumns>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-2" id="gpD-O1-JD7"/>
+                                        <outlet property="delegate" destination="-2" id="Pq3-uH-GX1"/>
+                                    </connections>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="IjO-GQ-chB">
+                            <rect key="frame" x="1" y="119" width="223" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="e0V-yb-mbn">
+                            <rect key="frame" x="224" y="17" width="15" height="102"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-SZ-xyQ">
+                        <rect key="frame" x="247" y="-4" width="102" height="32"/>
+                        <buttonCell key="cell" type="push" title="Cancel All" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JCd-ln-cYx">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelAllOperations:" target="-2" id="Fya-Wi-MtK"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vat-b1-Jbe">
+                        <rect key="frame" x="11" y="7" width="107" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="103" id="AcH-EZ-RAD"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" placeholderString="3 operations" id="Ts6-We-feQ">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="JIC-OJ-fne" secondAttribute="trailing" constant="-1" id="5xg-S6-dUX"/>
+                    <constraint firstAttribute="trailing" secondItem="ycM-SZ-xyQ" secondAttribute="trailing" constant="5" id="BH3-2C-2yP"/>
+                    <constraint firstItem="JIC-OJ-fne" firstAttribute="leading" secondItem="aOz-nz-V0z" secondAttribute="leading" constant="-1" id="FUT-Uf-N8Y"/>
+                    <constraint firstItem="vat-b1-Jbe" firstAttribute="top" secondItem="ycM-SZ-xyQ" secondAttribute="top" id="KiL-dl-sI4"/>
+                    <constraint firstItem="vat-b1-Jbe" firstAttribute="top" secondItem="JIC-OJ-fne" secondAttribute="bottom" constant="2" id="Ln5-er-rQc"/>
+                    <constraint firstItem="vat-b1-Jbe" firstAttribute="leading" secondItem="aOz-nz-V0z" secondAttribute="leading" constant="13" id="R95-KP-Zup"/>
+                    <constraint firstItem="JIC-OJ-fne" firstAttribute="top" secondItem="aOz-nz-V0z" secondAttribute="top" constant="-1" id="pCz-3R-w1c"/>
+                    <constraint firstAttribute="bottom" secondItem="ycM-SZ-xyQ" secondAttribute="bottom" constant="3" id="sf8-So-394"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="346" y="184.5"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
+    </resources>
+</document>

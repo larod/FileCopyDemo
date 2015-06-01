@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -14,6 +14,8 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="destinationLabel" destination="5ZJ-ep-vBi" id="1yb-AO-CKf"/>
+                <outlet property="fileCopyButton" destination="0hI-oA-PDY" id="YQa-nC-Ovr"/>
+                <outlet property="queueButton" destination="NOM-kW-cRO" id="hjT-4H-QIV"/>
                 <outlet property="sourceLabel" destination="WyZ-9B-C73" id="8cE-Q0-DF0"/>
             </connections>
         </customObject>
@@ -720,24 +722,21 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
-                            <connections>
-                                <action selector="addOperation:" target="Voe-Tx-rLC" id="XGb-5h-HPW"/>
-                            </connections>
                         </button>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="88544098-4CF3-4685-95D6-C19802BC9A6D" label="Queue" paletteLabel="Queue" id="KOj-qn-Sqo">
                         <nil key="toolTip"/>
                         <size key="minSize" width="82" height="32"/>
-                        <size key="maxSize" width="93" height="43"/>
+                        <size key="maxSize" width="191" height="54"/>
                         <button key="view" verticalHuggingPriority="750" id="NOM-kW-cRO">
-                            <rect key="frame" x="0.0" y="14" width="93" height="43"/>
+                            <rect key="frame" x="0.0" y="14" width="191" height="54"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="push" title="Queue" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r6q-Qb-1Km">
+                            <buttonCell key="cell" type="push" title="Add to Queue Window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r6q-Qb-1Km">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="showQueue:" target="Voe-Tx-rLC" id="MUO-cC-HnP"/>
+                                <action selector="addQueueOperation:" target="Voe-Tx-rLC" id="Dve-fa-UAH"/>
                             </connections>
                         </button>
                     </toolbarItem>
@@ -752,17 +751,29 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="9D88E838-A073-4542-8E6A-A95DBB73939C" label="File Copy" paletteLabel="File Copy" id="2K8-6X-eJo">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="82" height="32"/>
+                        <size key="maxSize" width="205" height="54"/>
+                        <button key="view" verticalHuggingPriority="750" id="0hI-oA-PDY">
+                            <rect key="frame" x="0.0" y="14" width="205" height="54"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="push" title="Add to FileCopy Window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h3g-FV-njz">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
                             <connections>
-                                <action selector="CancelAll:" target="Voe-Tx-rLC" id="vC1-5e-RKb"/>
+                                <action selector="addFileCopyWindowOperation:" target="Voe-Tx-rLC" id="2XO-sU-Hos"/>
                             </connections>
                         </button>
                     </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
-                    <toolbarItem reference="pAd-bf-9QU"/>
                     <toolbarItem reference="KOj-qn-Sqo"/>
+                    <toolbarItem reference="2K8-6X-eJo"/>
                     <toolbarItem reference="rzX-rB-U0y"/>
-                    <toolbarItem reference="ovT-Iy-zLB"/>
                 </defaultToolbarItems>
             </toolbar>
             <point key="canvasLocation" x="435" y="596"/>

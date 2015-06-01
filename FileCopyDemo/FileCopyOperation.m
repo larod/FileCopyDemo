@@ -35,10 +35,7 @@
 
 @implementation FileCopyOperation
 
-- (instancetype)initWithSource:(NSURL *)src andDestination:(NSURL *)dst {
-    // ----------------------------------------------------------------------------------------------------
-    //
-    // ----------------------------------------------------------------------------------------------------
+-(instancetype)initWithSource:(NSURL *)src andDestination:(NSURL *)dst andDelegate:(id <FileCopyOperationDelegate>)delegate {
     self = [super init];
     if (self) {
         _srcURL = src;
@@ -52,8 +49,7 @@
         self.qualityOfService = NSQualityOfServiceUtility;
         self.queuePriority = NSOperationQueuePriorityNormal;
         
-        AppDelegate *appDelagate = [[NSApplication sharedApplication]delegate];
-        self.delegate = appDelagate.queueWindowController;
+        self.delegate = delegate;
     }
     return self;
 }
