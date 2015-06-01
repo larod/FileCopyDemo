@@ -16,23 +16,26 @@
 
 #import "AppDelegate.h"
 #import "QueueWindowController.h"
+#import "FileCopyViewController.h"
+
+@interface AppDelegate()
+@property (weak) IBOutlet NSButton * queueButton;
+@property (weak) IBOutlet NSButton * fileCopyButton;
+@end
 
 @implementation AppDelegate
+FileCopyViewController *_fileCopyViewController;
+QueueWindowController * _queueWindowController;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // ----------------------------------------------------------------------------------------------------
-    // Setting a default value for destination.
-    // ----------------------------------------------------------------------------------------------------
-    [_destinationLabel setStringValue:[NSString stringWithFormat:@"~/Desktop"].stringByExpandingTildeInPath];
-}
--(IBAction)addOperation:(id)sender {
+-(IBAction)addQueueOperation:(id)sender {
     // ----------------------------------------------------------------------------------------------------
     // This is some lazy instantiation for the _queueWindorController
     // ----------------------------------------------------------------------------------------------------
     if (!_queueWindowController) {
         _queueWindowController = [[QueueWindowController alloc]initWithWindowNibName:@"Queue"];
+        [_fileCopyButton setEnabled:NO];
     }
-    [_queueWindowController showWindow:self];
+    [_queueWindowController showWindow:nil];
     
     // ----------------------------------------------------------------------------------------------------
     // Do your checks here, check if the file already exists and handle if the file should be
@@ -40,19 +43,39 @@
     // Beyond this point [addFileCopyOperationWithSource:andDestination:] will only check if the urls are
     // reachable, if the file urls can be reached the operation will be queued.
     // ----------------------------------------------------------------------------------------------------
+    
     [_queueWindowController addFileCopyOperationWithSource:[NSURL fileURLWithPath:_sourceLabel.stringValue] andDestination:[NSURL fileURLWithPath:_destinationLabel.stringValue]];
+    
+}
+-(IBAction)addFileCopyWindowOperation:(id)sender {
+    if (!_fileCopyViewController) {
+        _fileCopyViewController = [[FileCopyViewController alloc]initWithWindowNibName:@"FileCopyWindow"];
+        [_queueButton setEnabled:NO];
+    }
+    [_fileCopyViewController showWindow:nil];
+    
+    [_fileCopyViewController addFileCopyOperationWithSource:[NSURL fileURLWithPath:_sourceLabel.stringValue]  andDestination:[NSURL fileURLWithPath:_destinationLabel.stringValue]];
 }
 -(IBAction)showQueue:(id)sender {
     // ----------------------------------------------------------------------------------------------------
-    // This is some lazy instantiation for the _queueWindorController. If it is intantiated it will toggle
-    // open/close the Queue window.
+    // Comment
     // ----------------------------------------------------------------------------------------------------
     if (!_queueWindowController) {
         _queueWindowController = [[QueueWindowController alloc]initWithWindowNibName:@"Queue"];
-        [_queueWindowController showWindow:self];
-    } else {
-        [_queueWindowController.window isVisible] ? [_queueWindowController close] : [_queueWindowController showWindow:self];
+        [_queueWindowController showWindow:nil];
     }
+    [_queueWindowController showWindow:nil];
+    [_queueWindowController.window makeKeyWindow];
+}
+-(IBAction)showFileCopyWindow:(id)sender {
+    // ----------------------------------------------------------------------------------------------------
+    // Comment
+    // ----------------------------------------------------------------------------------------------------
+    if (!_fileCopyViewController) {
+        _fileCopyViewController = [[FileCopyViewController alloc]initWithWindowNibName:@"FileCopyWindow"];
+    }
+    [_fileCopyViewController showWindow:nil];
+    [_fileCopyViewController.window makeKeyWindow];
 }
 -(IBAction)CancelAll:(id)sender {
     // ----------------------------------------------------------------------------------------------------

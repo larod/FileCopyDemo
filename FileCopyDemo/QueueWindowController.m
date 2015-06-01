@@ -23,7 +23,7 @@
 #define ROW_HEIGHT 60
 
 @interface QueueWindowController ()
-
+@property (weak) IBOutlet NSTableView * tableView;
 @property (weak) IBOutlet NSScrollView * scrollView;
 @end
 
@@ -31,6 +31,7 @@
 int rows;
 NSTimer *updateTimer;
 NSRect windowFrame;
+FileCopyManager * fileCopyManager;
 
 #pragma mark Class Methods
 -(void)windowDidLoad {
@@ -45,13 +46,13 @@ NSRect windowFrame;
     // -(NSView *)tableView:(NSTableView *)tableView
     //   viewForTableColumn:(NSTableColumn *)tableColumn
     //                  row:(NSInteger)row
-    // ----------------------------------------------------------------------------------------------------
     //[_tableView registerNib:[[NSNib alloc]initWithNibNamed:@"FileCopyCell" bundle:nil] forIdentifier:@"FileCopyCell"];
+    // ----------------------------------------------------------------------------------------------------
     
     // ----------------------------------------------------------------------------------------------------
     // This a lazy instantiation of the singleton [FileCopyManager sharedFileCopyManager] the observer
-    // keeps track of the number of operations in queue. I use to size the window as additional operations
-    // are added.
+    // keeps track of the number of operations in queue. I use it to size the window as additional
+    // operations are added.
     // ----------------------------------------------------------------------------------------------------
     if (!fileCopyManager) {
         fileCopyManager = [FileCopyManager sharedFileCopyManager];
@@ -84,7 +85,7 @@ NSRect windowFrame;
     // once the operation is created is added to the queue using [fileCopyManager addOperation:].
     // ----------------------------------------------------------------------------------------------------
     if ([source checkResourceIsReachableAndReturnError:&srcError] && [destination checkResourceIsReachableAndReturnError:&dstError]) {
-        FileCopyOperation *opr = [[FileCopyOperation alloc]initWithSource:source andDestination:[NSURL fileURLWithPath:[destination.path stringByAppendingPathComponent:source.lastPathComponent] isDirectory:YES]];
+        FileCopyOperation *opr = [[FileCopyOperation alloc]initWithSource:source andDestination:[NSURL fileURLWithPath:[destination.path stringByAppendingPathComponent:source.lastPathComponent] isDirectory:NO] andDelegate:self];
         [fileCopyManager addOPeration:opr];
     } else {
         srcError ? [NSAlert alertWithError:srcError] : nil;

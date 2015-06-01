@@ -19,11 +19,9 @@
 
 @class FileCopyManager;
 
-@interface QueueWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate, FileCopyOperationDelegate> {
-    FileCopyManager * fileCopyManager;
-}
-@property IBOutlet NSTableView * tableView;
-@property (nonatomic, strong) NSMutableArray * fileCopyOperations;
+@interface QueueWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate, FileCopyOperationDelegate>
+
+@property (nonatomic) NSMutableArray * fileCopyOperations;
 
 - (void)addFileCopyOperationWithSource:(NSURL*)source andDestination:(NSURL*)destination;
 - (void)cancelAllOperations;

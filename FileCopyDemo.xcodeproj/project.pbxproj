@@ -18,6 +18,8 @@
 		78DA0FBC1ACCB728001D3D57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78DA0FBB1ACCB728001D3D57 /* Images.xcassets */; };
 		78DA0FBF1ACCB728001D3D57 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78DA0FBD1ACCB728001D3D57 /* MainMenu.xib */; };
 		78DA0FCB1ACCB728001D3D57 /* FileCopyDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78DA0FCA1ACCB728001D3D57 /* FileCopyDemoTests.m */; };
+		78F413EA1B1C993A0026BB04 /* FileCopyWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F413E91B1C993A0026BB04 /* FileCopyWindow.xib */; };
+		78F413ED1B1C9C380026BB04 /* FileCopyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F413EC1B1C9C380026BB04 /* FileCopyViewController.m */; };
 		78F67BF31ACF1D5A00EB3737 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F67BF01ACF1D5A00EB3737 /* DestinationViewController.m */; };
 		78F67BF41ACF1D5A00EB3737 /* SourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F67BF21ACF1D5A00EB3737 /* SourceViewController.m */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,9 @@
 		78DA0FC91ACCB728001D3D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78DA0FCA1ACCB728001D3D57 /* FileCopyDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileCopyDemoTests.m; sourceTree = "<group>"; };
 		78DA0FD41ACCB73C001D3D57 /* FileCopyDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FileCopyDemo.entitlements; sourceTree = "<group>"; };
+		78F413E91B1C993A0026BB04 /* FileCopyWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileCopyWindow.xib; sourceTree = "<group>"; };
+		78F413EB1B1C9C380026BB04 /* FileCopyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCopyViewController.h; sourceTree = "<group>"; };
+		78F413EC1B1C9C380026BB04 /* FileCopyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCopyViewController.m; sourceTree = "<group>"; };
 		78F67BEF1ACF1D5A00EB3737 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
 		78F67BF01ACF1D5A00EB3737 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
 		78F67BF11ACF1D5A00EB3737 /* SourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceViewController.h; sourceTree = "<group>"; };
@@ -115,6 +120,9 @@
 				78BDEFBB1AD6C13900F0B285 /* FileCopyCell.m */,
 				78DA0FBD1ACCB728001D3D57 /* MainMenu.xib */,
 				787B4EB01ACE0F2500EDCC92 /* Queue.xib */,
+				78F413EB1B1C9C380026BB04 /* FileCopyViewController.h */,
+				78F413EC1B1C9C380026BB04 /* FileCopyViewController.m */,
+				78F413E91B1C993A0026BB04 /* FileCopyWindow.xib */,
 				78DA0FBB1ACCB728001D3D57 /* Images.xcassets */,
 				787B4EBB1ACE7E3300EDCC92 /* dropzone.png */,
 				78DA0FD41ACCB73C001D3D57 /* FileCopyDemo.entitlements */,
@@ -235,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				787B4EBC1ACE7E3300EDCC92 /* dropzone.png in Resources */,
+				78F413EA1B1C993A0026BB04 /* FileCopyWindow.xib in Resources */,
 				787B4EB11ACE0F2500EDCC92 /* Queue.xib in Resources */,
 				78DA0FBC1ACCB728001D3D57 /* Images.xcassets in Resources */,
 				78DA0FBF1ACCB728001D3D57 /* MainMenu.xib in Resources */,
@@ -262,6 +271,7 @@
 				78BDEFBC1AD6C13900F0B285 /* FileCopyCell.m in Sources */,
 				782F37DE1AD5519200A6296A /* QueueWindowController.m in Sources */,
 				787B4EAB1ACD3BEE00EDCC92 /* FileCopyManager.m in Sources */,
+				78F413ED1B1C9C380026BB04 /* FileCopyViewController.m in Sources */,
 				78F67BF31ACF1D5A00EB3737 /* DestinationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
