@@ -5,4 +5,6 @@ Apple hasn't provided an API for a file copy operation with progress callback. T
 
 I spent many hours trying to save people's time, if you wish to contribute you are more than welcome to do so. If you have any comments or ways to make this project better please send me a note. Thanks!
 
+I have added another file copy window to the application, you can now choose between two styles of copy managers. You'll need to restart the application when switching modes.
+
 <img src="http://i.imgur.com/Pg5wEp0.png" alt="">
