@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		782F37DE1AD5519200A6296A /* QueueWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 782F37DD1AD5519200A6296A /* QueueWindowController.m */; };
+		7848424E1B1E0669009CE4D1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7848424D1B1E0669009CE4D1 /* README.md */; };
 		787B4EAB1ACD3BEE00EDCC92 /* FileCopyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 787B4EAA1ACD3BEE00EDCC92 /* FileCopyManager.m */; };
 		787B4EAE1ACD597900EDCC92 /* FileCopyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 787B4EAD1ACD597900EDCC92 /* FileCopyOperation.m */; };
 		787B4EB11ACE0F2500EDCC92 /* Queue.xib in Resources */ = {isa = PBXBuildFile; fileRef = 787B4EB01ACE0F2500EDCC92 /* Queue.xib */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		782F37DC1AD5519200A6296A /* QueueWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueWindowController.h; sourceTree = "<group>"; };
 		782F37DD1AD5519200A6296A /* QueueWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueWindowController.m; sourceTree = "<group>"; };
+		7848424D1B1E0669009CE4D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		787B4EA91ACD3BEE00EDCC92 /* FileCopyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCopyManager.h; sourceTree = "<group>"; };
 		787B4EAA1ACD3BEE00EDCC92 /* FileCopyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCopyManager.m; sourceTree = "<group>"; };
 		787B4EAC1ACD597900EDCC92 /* FileCopyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCopyOperation.h; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		78DA0FB41ACCB728001D3D57 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7848424D1B1E0669009CE4D1 /* README.md */,
 				78DA0FB51ACCB728001D3D57 /* Info.plist */,
 				78DA0FB91ACCB728001D3D57 /* main.m */,
 			);
@@ -266,6 +269,7 @@
 			files = (
 				78DA0FBA1ACCB728001D3D57 /* main.m in Sources */,
 				78DA0FB81ACCB728001D3D57 /* AppDelegate.m in Sources */,
+				7848424E1B1E0669009CE4D1 /* README.md in Sources */,
 				787B4EAE1ACD597900EDCC92 /* FileCopyOperation.m in Sources */,
 				78F67BF41ACF1D5A00EB3737 /* SourceViewController.m in Sources */,
 				78BDEFBC1AD6C13900F0B285 /* FileCopyCell.m in Sources */,
