@@ -4,6 +4,7 @@
 
 @interface FileCopyViewController ()
 @property (weak) IBOutlet NSTableView * tableView;
+@property (weak) IBOutlet NSTextField * statusLabel;
 @property (nonatomic) NSMutableArray * fileCopyOperations;
 @end
 
@@ -30,9 +31,11 @@ NSTimer *updateTimer;
         if (updateTimer) {
             [updateTimer invalidate];
         }
+        [_statusLabel performSelectorOnMainThread:@selector(setStringValue:) withObject:@"" waitUntilDone:NO];
         [self performSelectorOnMainThread:@selector(close) withObject:nil waitUntilDone:NO];
     } else {
         updateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:_tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
+        [_statusLabel performSelectorOnMainThread:@selector(setStringValue:) withObject:[NSString stringWithFormat:@"%@ operations",[NSNumber numberWithLong:fileCopyManager.fileCopyQueue.operations.count]] waitUntilDone:NO];
     }
 }
 -(void)addFileCopyOperationWithSource:(NSURL *)source andDestination:(NSURL *)destination {
