@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FileCopyViewController">
             <connections>
+                <outlet property="statusLabel" destination="Am3-d2-nVs" id="8fe-CJ-eGu"/>
                 <outlet property="tableView" destination="dsd-J4-SVr" id="RQL-qb-beh"/>
                 <outlet property="window" destination="uiF-Bq-EwG" id="BZh-ha-yyP"/>
             </connections>
@@ -28,7 +29,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="58" rowSizeStyle="automatic" viewBased="YES" id="dsd-J4-SVr">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -131,12 +132,9 @@
                             <action selector="cancelAllOperations:" target="-2" id="Fya-Wi-MtK"/>
                         </connections>
                     </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vat-b1-Jbe">
-                        <rect key="frame" x="11" y="7" width="107" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="103" id="AcH-EZ-RAD"/>
-                        </constraints>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" placeholderString="3 operations" id="Ts6-We-feQ">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Am3-d2-nVs">
+                        <rect key="frame" x="9" y="5" width="94" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" placeholderString="00 operations" id="xJ7-7c-68a">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -144,14 +142,12 @@
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="JIC-OJ-fne" secondAttribute="trailing" constant="-1" id="5xg-S6-dUX"/>
-                    <constraint firstAttribute="trailing" secondItem="ycM-SZ-xyQ" secondAttribute="trailing" constant="5" id="BH3-2C-2yP"/>
-                    <constraint firstItem="JIC-OJ-fne" firstAttribute="leading" secondItem="aOz-nz-V0z" secondAttribute="leading" constant="-1" id="FUT-Uf-N8Y"/>
-                    <constraint firstItem="vat-b1-Jbe" firstAttribute="top" secondItem="ycM-SZ-xyQ" secondAttribute="top" id="KiL-dl-sI4"/>
-                    <constraint firstItem="vat-b1-Jbe" firstAttribute="top" secondItem="JIC-OJ-fne" secondAttribute="bottom" constant="2" id="Ln5-er-rQc"/>
-                    <constraint firstItem="vat-b1-Jbe" firstAttribute="leading" secondItem="aOz-nz-V0z" secondAttribute="leading" constant="13" id="R95-KP-Zup"/>
-                    <constraint firstItem="JIC-OJ-fne" firstAttribute="top" secondItem="aOz-nz-V0z" secondAttribute="top" constant="-1" id="pCz-3R-w1c"/>
-                    <constraint firstAttribute="bottom" secondItem="ycM-SZ-xyQ" secondAttribute="bottom" constant="3" id="sf8-So-394"/>
+                    <constraint firstAttribute="trailing" secondItem="JIC-OJ-fne" secondAttribute="trailing" constant="-1" id="En4-S2-tbU"/>
+                    <constraint firstAttribute="bottom" secondItem="ycM-SZ-xyQ" secondAttribute="bottom" constant="3" id="FeK-eP-gmt"/>
+                    <constraint firstItem="JIC-OJ-fne" firstAttribute="leading" secondItem="aOz-nz-V0z" secondAttribute="leading" constant="-1" id="VLt-vn-3vy"/>
+                    <constraint firstItem="ycM-SZ-xyQ" firstAttribute="top" secondItem="JIC-OJ-fne" secondAttribute="bottom" constant="2" id="lL0-7t-Jxb"/>
+                    <constraint firstAttribute="trailing" secondItem="ycM-SZ-xyQ" secondAttribute="trailing" constant="5" id="qmo-H7-UB3"/>
+                    <constraint firstItem="JIC-OJ-fne" firstAttribute="top" secondItem="aOz-nz-V0z" secondAttribute="top" constant="-1" id="ySy-ZJ-Gvx"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="346" y="184.5"/>
