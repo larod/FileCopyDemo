@@ -22,7 +22,6 @@ limitations under the License.
 @property (weak) IBOutlet NSTextField * sourceLabel;
 @property (weak) IBOutlet NSTextField * destinationLabel;
 
--(IBAction)showQueue:(id)sender;
 -(QueueWindowController*)getQueueController;
 
 @end

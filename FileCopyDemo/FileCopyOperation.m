@@ -48,7 +48,6 @@
         
         self.qualityOfService = NSQualityOfServiceUtility;
         self.queuePriority = NSOperationQueuePriorityNormal;
-        
         self.delegate = delegate;
     }
     return self;

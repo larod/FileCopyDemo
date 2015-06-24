@@ -19,7 +19,6 @@
 
 @interface FileCopyViewController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate, FileCopyOperationDelegate>
 
-- (void)addFileCopyOperationWithSource:(NSURL*)source andDestination:(NSURL*)destination;
-- (void)removeObject:(id)object;
-
+-(void)addFileCopyOperationWithSource:(NSURL*)source andDestination:(NSURL*)destination;
+-(void)removeObject:(id)object;
 @end

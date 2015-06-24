@@ -28,7 +28,7 @@
 FileCopyManager * fileCopyManager;
 NSTimer *updateTimer;
 
-- (void)windowDidLoad {
+-(void)windowDidLoad {
     [super windowDidLoad];
     _fileCopyOperations = [NSMutableArray new];
     if (!fileCopyManager) {
@@ -50,9 +50,14 @@ NSTimer *updateTimer;
         [_statusLabel performSelectorOnMainThread:@selector(setStringValue:) withObject:@"" waitUntilDone:NO];
         [self performSelectorOnMainThread:@selector(close) withObject:nil waitUntilDone:NO];
     } else {
-        updateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:_tableView selector:@selector(reloadData) userInfo:nil repeats:YES];
-        [_statusLabel performSelectorOnMainThread:@selector(setStringValue:) withObject:[NSString stringWithFormat:@"%@ operations",[NSNumber numberWithLong:fileCopyManager.fileCopyQueue.operations.count]] waitUntilDone:NO];
+        updateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
     }
+}
+-(void)updateProgress:(id)sender {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_tableView reloadData];
+        [_statusLabel performSelectorOnMainThread:@selector(setStringValue:) withObject:[NSString stringWithFormat:@"%@ operations",[NSNumber numberWithLong:fileCopyManager.fileCopyQueue.operations.count]] waitUntilDone:NO];
+    });
 }
 -(void)addFileCopyOperationWithSource:(NSURL *)source andDestination:(NSURL *)destination {
     NSError *srcError, *dstError;
@@ -71,7 +76,7 @@ NSTimer *updateTimer;
 -(IBAction)cancelAllOperations:(id)sender {
     [fileCopyManager.fileCopyQueue cancelAllOperations];
 }
-- (void)removeObject:(id)object {
+-(void)removeObject:(id)object {
     // ----------------------------------------------------------------------------------------------------
     // This method is called from -(void)fileCopyOperationDidFinished:(FileCopyOperation *)fileCopyOperation
     // it finds the index of the object to be removed, if is found it removes the row from the table and

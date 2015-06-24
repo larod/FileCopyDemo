@@ -56,33 +56,6 @@ QueueWindowController * _queueWindowController;
     
     [_fileCopyViewController addFileCopyOperationWithSource:[NSURL fileURLWithPath:_sourceLabel.stringValue]  andDestination:[NSURL fileURLWithPath:_destinationLabel.stringValue]];
 }
--(IBAction)showQueue:(id)sender {
-    // ----------------------------------------------------------------------------------------------------
-    // Comment
-    // ----------------------------------------------------------------------------------------------------
-    if (!_queueWindowController) {
-        _queueWindowController = [[QueueWindowController alloc]initWithWindowNibName:@"Queue"];
-        [_queueWindowController showWindow:nil];
-    }
-    [_queueWindowController showWindow:nil];
-    [_queueWindowController.window makeKeyWindow];
-}
--(IBAction)showFileCopyWindow:(id)sender {
-    // ----------------------------------------------------------------------------------------------------
-    // Comment
-    // ----------------------------------------------------------------------------------------------------
-    if (!_fileCopyViewController) {
-        _fileCopyViewController = [[FileCopyViewController alloc]initWithWindowNibName:@"FileCopyWindow"];
-    }
-    [_fileCopyViewController showWindow:nil];
-    [_fileCopyViewController.window makeKeyWindow];
-}
--(IBAction)CancelAll:(id)sender {
-    // ----------------------------------------------------------------------------------------------------
-    // This method eventually calls [fileQueue cancelAllOperations]
-    // ----------------------------------------------------------------------------------------------------
-    [_queueWindowController cancelAllOperations];
-}
 -(QueueWindowController *)getQueueController {
     return _queueWindowController;
 }
