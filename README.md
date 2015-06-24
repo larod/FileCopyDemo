@@ -7,6 +7,13 @@ I spent many hours trying to save people's time, if you wish to contribute you a
 
 I have added another file copy window to the application, you can now choose between two styles of copy managers. You'll need to restart the application when switching modes.
 
-<img src="http://i.imgur.com/XVnxk1U.png" alt="">
-<img src="http://i.imgur.com/Pg5wEp0.png" alt="">
+Here is the main window, you can select which mode you want to use.
 <img src="http://i.imgur.com/mjWXauu.png" alt="">
+
+The Queue will resize the window dynamically.
+<img src="http://i.imgur.com/Pg5wEp0.png" alt="">
+
+The FileCopyWindow shows you the amount of operations on queue and has a button to cancel all operations.
+<img src="http://i.imgur.com/XVnxk1U.png" alt="">
+
+
