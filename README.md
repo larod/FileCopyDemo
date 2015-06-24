@@ -7,4 +7,6 @@ I spent many hours trying to save people's time, if you wish to contribute you a
 
 I have added another file copy window to the application, you can now choose between two styles of copy managers. You'll need to restart the application when switching modes.
 
+<img src="http://imgur.com/XVnxk1U,mjWXauu#1" alt="">
 <img src="http://i.imgur.com/Pg5wEp0.png" alt="">
+<img src="http://imgur.com/XVnxk1U,mjWXauu" alt="">
