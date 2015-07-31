@@ -20,11 +20,25 @@
 
 @interface FileCopyManager : NSObject
 
-@property (nonatomic, strong, readonly) NSOperationQueue * fileCopyQueue;
+@property (nonatomic, strong, readonly) NSOperationQueue * fileCopyQueue; ///< Holds all FileCopyOperation objects.
 
+/**
+ * Returns the shared file copy manager object for the process.
+ * This method always returns the same file copy manager object.
+ * @return The default FileCopyManager object.
+ */
 +(instancetype)sharedFileCopyManager;
--(void)addOPeration:(FileCopyOperation*)opr;
--(int)maxConcurrentOperations;
 
+/**
+ * Adds a FileCopyOperation object to the fileCopyQueue.
+ * @param opr The FileCopyOperation to add to the fileCopyQueue.
+ */
+-(void)addOPeration:(FileCopyOperation*)opr;
+
+/**
+ * Returns the maximum concurrent FileCopyOperation objects.
+ * @return The maximum count of FileCopyOperation objects that can run concurrently.
+ */
+-(int)maxConcurrentOperations;
 
 @end

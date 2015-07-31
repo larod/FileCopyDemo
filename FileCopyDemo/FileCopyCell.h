@@ -17,7 +17,9 @@
 #import <Cocoa/Cocoa.h>
 
 @class FileCopyOperation;
-
+/**
+ * Custom class for rows containing FileCopyOperation objects.
+ */
 @interface FileCopyCell : NSTableCellView
 
 @property (nonatomic, weak) IBOutlet NSTextField * fileName;

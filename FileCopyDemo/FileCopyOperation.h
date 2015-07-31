@@ -6,7 +6,7 @@
  I highly recommend everyone to study his implementation which is more complete and can
  handle folders. I added an additional protocol and more properties to make it easy for devs
  to update guis.
-
+ 
  Copyright 2015 Luis A. Rodríguez-Rivera
  
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,25 +37,48 @@ typedef NS_ENUM(int8_t, FILE_COPY_STATE) {
 // FileCopyOperation interface
 @interface FileCopyOperation : NSOperation
 
-@property (nonatomic, readonly) NSURL * srcURL;
-@property (nonatomic, readonly) NSURL * dstURL;
-@property (nonatomic, readonly) NSString * fName;
-@property (nonatomic, readonly) NSNumber * fSize;
-@property (nonatomic) NSNumber * bWritten;
+@property (nonatomic, readonly) NSURL * srcURL; ///< Source URL.
+@property (nonatomic, readonly) NSURL * dstURL; ///< Destination URL.
+@property (nonatomic, readonly) NSString * fName; ///< File name of the media being copied.
+@property (nonatomic, readonly) NSNumber * fSize; ///< File size of the file being copied.
+@property (nonatomic) NSNumber * bWritten; ///< Bytes written so far.
 
-@property (readonly) FILE_COPY_STATE fCopyState;
-@property (weak) id<FileCopyOperationDelegate> delegate;
-@property (readonly) int fCopyExitCode;
+@property (readonly) FILE_COPY_STATE fCopyState; ///< FileCopyOperation current state.
+@property (weak) id<FileCopyOperationDelegate> delegate; ///< FileCopyOperationDelegate.
+@property (readonly) int fCopyExitCode; ///< FileCopyOperation exit code.
 
-//- (instancetype)initWithSource:(NSURL*)src andDestination:(NSURL*)dst;
+/**
+ * Creates a new FileCopyOperationObject.
+ * @param src Source URL.
+ * @param dst Destination URL.
+ * @param delegata The FileCopyOperationDelegate
+ * @return A new FileCopyOperation object initialized with the parameters given.
+ */
 - (instancetype)initWithSource:(NSURL *)src andDestination:(NSURL *)dst andDelegate:(id <FileCopyOperationDelegate>)delegate;
 
 @end
 
-// Delegate implementation
+/** Delegate implementation */
 @protocol FileCopyOperationDelegate <NSObject>
 @optional
+/**
+ * This delegate method gets called when the FileCopyOperation is about to start.
+ * Any GUI prep code goes here.
+ * @param fileCopyOperation The FileCopyOperation object.
+ */
 - (void)fileCopyOperationWillStart:(FileCopyOperation*)fileCopyOperation;
+
+/**
+ * This delegate method gets called when the FileCopyOperation finishes.
+ * Any cleanup code goes here.
+ * @param fileCopyOperation The FileCopyOperation object.
+ */
 - (void)fileCopyOperationDidFinished:(FileCopyOperation*)fileCopyOperation;
+
+/**
+ * This delegate method gets called when FileCopyOperation writes data.
+ * Is used to update file copy progress.
+ * @param fileCopyOperation The FileCopyOperation object.
+ */
 - (void)fileCopyOperationStatusUpdate:(FileCopyOperation*)fileCopyOperation;
 @end

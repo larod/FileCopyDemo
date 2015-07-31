@@ -18,12 +18,33 @@
 #import "FileCopyOperation.h"
 
 @class FileCopyManager;
-
+/**
+ * Main queue controller for adding, removing or cancelling FileCopyOperations.
+ */
 @interface QueueWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate, FileCopyOperationDelegate>
 
-@property (nonatomic) NSMutableArray * fileCopyOperations;
+@property (nonatomic) NSMutableArray * fileCopyOperations; ///< Holds all FileCopyOperations objects for progress tracking and cleaning up purposes.
 
+/**
+ * Creates a FileCopyOperation object with the parameters given and
+ * adds the operation to the FileCopyManager's FileCopyQueue.
+ * @param source The source URL.
+ * @param destination The destination URL.
+ * @see FileCopyManager
+ * @see FileCopyOperation
+ * @return void
+ */
 - (void)addFileCopyOperationWithSource:(NSURL*)source andDestination:(NSURL*)destination;
+
+/**
+ * Cancels all queued and executing operations currently on the FileCopyManager's FileCopyQueue.
+ * @see FileCopyManager
+ */
 - (void)cancelAllOperations;
+
+/**
+ * Removes the FileCopyOperation represented object from the table view and the fileCopyOperations array.
+ * @param object The object to be removed.
+ */
 - (void)removeObject:(id)object;
 @end

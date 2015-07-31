@@ -29,9 +29,6 @@
     [super drawRect:dirtyRect];
 }
 -(IBAction)cancelOpr:(id)sender {
-    // ----------------------------------------------------------------------------------------------------
-    //
-    // ----------------------------------------------------------------------------------------------------
     NSButton *button = (NSButton*)sender;
     FileCopyOperation *opr = [(NSTableCellView*)[button superview]objectValue];
     [opr cancel];

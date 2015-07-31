@@ -19,6 +19,20 @@
 
 @interface FileCopyViewController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate, FileCopyOperationDelegate>
 
+/**
+ * Creates a FileCopyOperation object with the parameters given and
+ * adds the operation to the FileCopyManager fileCopyQueue.
+ * @param source The source URL.
+ * @param destination The destination URL.
+ * @see FileCopyManager
+ * @see FileCopyOperation
+ * @return void
+ */
 -(void)addFileCopyOperationWithSource:(NSURL*)source andDestination:(NSURL*)destination;
+
+/**
+ * Removes the FileCopyOperation represented object from the table view and the fileCopyOperations array.
+ * @param object The object to be removed.
+ */
 -(void)removeObject:(id)object;
 @end
